@@ -15,6 +15,5 @@ namespace BatteryInfo
         {
             InitializeComponent();
         }
-
     }
 }
