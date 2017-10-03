@@ -23,10 +23,10 @@ namespace BatteryInfo
 
         public Battery()
         {
-            updateData();
+            UpdateData();
         }
 
-        public static void updateData() {
+        public static void UpdateData() {
             _percent = SystemInformation.PowerStatus.BatteryLifePercent * 100;
             _connectionType = SystemInformation.PowerStatus.PowerLineStatus;
             //_remainingTime = SystemInformation.PowerStatus.BatteryLifeRemaining;

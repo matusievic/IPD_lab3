@@ -1,6 +1,6 @@
 ﻿namespace BatteryInfo
 {
-    partial class BatteryInfo
+    partial class BatteryInfoForm
     {
         /// <summary>
         /// Требуется переменная конструктора.
@@ -124,7 +124,7 @@
             this.blurTimeComboBox.Size = new System.Drawing.Size(121, 21);
             this.blurTimeComboBox.TabIndex = 7;
             // 
-            // BatteryInfo
+            // BatteryInfoForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -137,7 +137,7 @@
             this.Controls.Add(this.connectionTypeLabel);
             this.Controls.Add(this.connectionTypeTextLabel);
             this.Controls.Add(this.chargeLevelLabel);
-            this.Name = "BatteryInfo";
+            this.Name = "BatteryInfoForm";
             this.Text = "BatteryInfo";
             this.ResumeLayout(false);
             this.PerformLayout();

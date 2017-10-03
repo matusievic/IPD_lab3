@@ -15,7 +15,11 @@ namespace BatteryInfo
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new BatteryInfo());
+            var batteryForm = new BatteryInfoForm();
+            var updater = new UpdaterThread(batteryForm);
+            updater.Start();
+            Application.Run(batteryForm);
+            updater.IsInterrupted = true;
         }
     }
 }
