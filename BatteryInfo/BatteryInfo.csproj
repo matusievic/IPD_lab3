@@ -56,7 +56,8 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="UpdaterThread.cs" />
+    <Compile Include="ScreenSwitcher.cs" />
+    <Compile Include="InformationUpdater.cs" />
     <EmbeddedResource Include="BatteryInfoForm.resx">
       <DependentUpon>BatteryInfoForm.cs</DependentUpon>
     </EmbeddedResource>

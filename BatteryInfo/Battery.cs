@@ -9,32 +9,42 @@ namespace BatteryInfo
 {
     class Battery
     {
-        private static double _percent;
-        private static PowerLineStatus _connectionType;
-        private static UInt32 _remainingTime;
+        private static Battery instance;
 
-        public static double Percent
+        private double _percent;
+        private PowerLineStatus _connectionType;
+        private UInt32 _remainingTime;
+
+        public double Percent
         { get { return _percent; } }
-        public static PowerLineStatus ConnectionType
+        public PowerLineStatus ConnectionType
         { get { return _connectionType; } }
-        public static UInt32 RemainingTime
+        public UInt32 RemainingTime
         { get { return _remainingTime; } }
 
-
-        public Battery()
-        {
-            UpdateData();
-        }
-
-        public static void UpdateData() {
+        /// <summary>
+        /// This method gets information about the battery using WMI
+        /// </summary>
+        public void UpdateData() {
             _percent = SystemInformation.PowerStatus.BatteryLifePercent * 100;
             _connectionType = SystemInformation.PowerStatus.PowerLineStatus;
-            //_remainingTime = SystemInformation.PowerStatus.BatteryLifeRemaining;
             var seacher = new ManagementObjectSearcher("SELECT * FROM Win32_Battery").Get();
             foreach (var property in seacher)
             {
                 _remainingTime = (UInt32)property["EstimatedRunTime"];
             }
+        }
+
+        private Battery()
+        {
+            UpdateData();
+        }
+
+        public static Battery GetInstance()
+        {
+            if (instance == null)
+                instance = new Battery();
+            return instance;
         }
     }
 }

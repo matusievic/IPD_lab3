@@ -8,7 +8,7 @@ namespace BatteryInfo
     static class Program
     {
         /// <summary>
-        /// Главная точка входа для приложения.
+        /// Main application entry point.
         /// </summary>
         [STAThread]
         static void Main()
@@ -16,10 +16,7 @@ namespace BatteryInfo
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             var batteryForm = new BatteryInfoForm();
-            var updater = new UpdaterThread(batteryForm);
-            updater.Start();
             Application.Run(batteryForm);
-            updater.IsInterrupted = true;
         }
     }
 }

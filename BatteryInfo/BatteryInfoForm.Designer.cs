@@ -34,8 +34,9 @@
             this.chargeLevelTextLabel = new System.Windows.Forms.Label();
             this.remainingTimeTextLabel = new System.Windows.Forms.Label();
             this.remainingTimeLabel = new System.Windows.Forms.Label();
-            this.blurTextLabel = new System.Windows.Forms.Label();
-            this.blurTimeComboBox = new System.Windows.Forms.ComboBox();
+            this.turnOffTextLabel = new System.Windows.Forms.Label();
+            this.turnOffTimeComboBox = new System.Windows.Forms.ComboBox();
+            this.secLabel = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // chargeLevelLabel
@@ -98,39 +99,54 @@
             this.remainingTimeLabel.TabIndex = 5;
             this.remainingTimeLabel.Text = "...";
             // 
-            // blurTextLabel
+            // turnOffTextLabel
             // 
-            this.blurTextLabel.AutoSize = true;
-            this.blurTextLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.blurTextLabel.Location = new System.Drawing.Point(14, 122);
-            this.blurTextLabel.Name = "blurTextLabel";
-            this.blurTextLabel.Size = new System.Drawing.Size(139, 40);
-            this.blurTextLabel.TabIndex = 6;
-            this.blurTextLabel.Text = "Blur screen in\r\nbattery mode after";
+            this.turnOffTextLabel.AutoSize = true;
+            this.turnOffTextLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.turnOffTextLabel.Location = new System.Drawing.Point(14, 122);
+            this.turnOffTextLabel.Name = "turnOffTextLabel";
+            this.turnOffTextLabel.Size = new System.Drawing.Size(159, 40);
+            this.turnOffTextLabel.TabIndex = 6;
+            this.turnOffTextLabel.Text = "Turn off the screen in\r\nbattery mode after";
             // 
-            // blurTimeComboBox
+            // turnOffTimeComboBox
             // 
-            this.blurTimeComboBox.FormattingEnabled = true;
-            this.blurTimeComboBox.Items.AddRange(new object[] {
-            "5 sec",
-            "10 sec",
-            "15 sec",
-            "20 sec",
-            "25 sec",
-            "30 sec",
-            "45 sec"});
-            this.blurTimeComboBox.Location = new System.Drawing.Point(169, 141);
-            this.blurTimeComboBox.Name = "blurTimeComboBox";
-            this.blurTimeComboBox.Size = new System.Drawing.Size(121, 21);
-            this.blurTimeComboBox.TabIndex = 7;
+            this.turnOffTimeComboBox.FormattingEnabled = true;
+            this.turnOffTimeComboBox.Items.AddRange(new object[] {
+            "10",
+            "20",
+            "30",
+            "45",
+            "60",
+            "120",
+            "180",
+            "300",
+            "600",
+            "900"});
+            this.turnOffTimeComboBox.Location = new System.Drawing.Point(179, 141);
+            this.turnOffTimeComboBox.Name = "turnOffTimeComboBox";
+            this.turnOffTimeComboBox.Size = new System.Drawing.Size(121, 21);
+            this.turnOffTimeComboBox.TabIndex = 7;
+            this.turnOffTimeComboBox.SelectedIndexChanged += new System.EventHandler(this.turnOffTimeComboBox_SelectedIndexChanged);
+            // 
+            // secLabel
+            // 
+            this.secLabel.AutoSize = true;
+            this.secLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.secLabel.Location = new System.Drawing.Point(306, 142);
+            this.secLabel.Name = "secLabel";
+            this.secLabel.Size = new System.Drawing.Size(34, 20);
+            this.secLabel.TabIndex = 8;
+            this.secLabel.Text = "sec";
             // 
             // BatteryInfoForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(351, 181);
-            this.Controls.Add(this.blurTimeComboBox);
-            this.Controls.Add(this.blurTextLabel);
+            this.Controls.Add(this.secLabel);
+            this.Controls.Add(this.turnOffTimeComboBox);
+            this.Controls.Add(this.turnOffTextLabel);
             this.Controls.Add(this.remainingTimeLabel);
             this.Controls.Add(this.remainingTimeTextLabel);
             this.Controls.Add(this.chargeLevelTextLabel);
@@ -139,6 +155,7 @@
             this.Controls.Add(this.chargeLevelLabel);
             this.Name = "BatteryInfoForm";
             this.Text = "BatteryInfo";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.BatteryInfoForm_FormClosed);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -152,8 +169,9 @@
         private System.Windows.Forms.Label chargeLevelTextLabel;
         private System.Windows.Forms.Label remainingTimeTextLabel;
         private System.Windows.Forms.Label remainingTimeLabel;
-        private System.Windows.Forms.Label blurTextLabel;
-        private System.Windows.Forms.ComboBox blurTimeComboBox;
+        private System.Windows.Forms.Label turnOffTextLabel;
+        private System.Windows.Forms.ComboBox turnOffTimeComboBox;
+        private System.Windows.Forms.Label secLabel;
     }
 }
 
