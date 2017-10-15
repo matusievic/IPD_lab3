@@ -36,7 +36,7 @@
             this.remainingTimeLabel = new System.Windows.Forms.Label();
             this.turnOffTextLabel = new System.Windows.Forms.Label();
             this.turnOffTimeComboBox = new System.Windows.Forms.ComboBox();
-            this.secLabel = new System.Windows.Forms.Label();
+            this.minLabel = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // chargeLevelLabel
@@ -113,38 +113,36 @@
             // 
             this.turnOffTimeComboBox.FormattingEnabled = true;
             this.turnOffTimeComboBox.Items.AddRange(new object[] {
+            "1",
+            "2",
+            "5",
             "10",
+            "15",
             "20",
-            "30",
-            "45",
-            "60",
-            "120",
-            "180",
-            "300",
-            "600",
-            "900"});
+            "25",
+            "30"});
             this.turnOffTimeComboBox.Location = new System.Drawing.Point(179, 141);
             this.turnOffTimeComboBox.Name = "turnOffTimeComboBox";
             this.turnOffTimeComboBox.Size = new System.Drawing.Size(121, 21);
             this.turnOffTimeComboBox.TabIndex = 7;
             this.turnOffTimeComboBox.SelectedIndexChanged += new System.EventHandler(this.turnOffTimeComboBox_SelectedIndexChanged);
             // 
-            // secLabel
+            // minLabel
             // 
-            this.secLabel.AutoSize = true;
-            this.secLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.secLabel.Location = new System.Drawing.Point(306, 142);
-            this.secLabel.Name = "secLabel";
-            this.secLabel.Size = new System.Drawing.Size(34, 20);
-            this.secLabel.TabIndex = 8;
-            this.secLabel.Text = "sec";
+            this.minLabel.AutoSize = true;
+            this.minLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.minLabel.Location = new System.Drawing.Point(306, 142);
+            this.minLabel.Name = "minLabel";
+            this.minLabel.Size = new System.Drawing.Size(34, 20);
+            this.minLabel.TabIndex = 8;
+            this.minLabel.Text = "min";
             // 
             // BatteryInfoForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(351, 181);
-            this.Controls.Add(this.secLabel);
+            this.Controls.Add(this.minLabel);
             this.Controls.Add(this.turnOffTimeComboBox);
             this.Controls.Add(this.turnOffTextLabel);
             this.Controls.Add(this.remainingTimeLabel);
@@ -171,7 +169,7 @@
         private System.Windows.Forms.Label remainingTimeLabel;
         private System.Windows.Forms.Label turnOffTextLabel;
         private System.Windows.Forms.ComboBox turnOffTimeComboBox;
-        private System.Windows.Forms.Label secLabel;
+        private System.Windows.Forms.Label minLabel;
     }
 }
 

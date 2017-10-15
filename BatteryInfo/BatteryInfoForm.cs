@@ -13,16 +13,15 @@ namespace BatteryInfo
     public partial class BatteryInfoForm : Form
     {
         private Battery PCBattery;
-        private ScreenSwitcher PCScreen;
+        private Screen PCScreen;
         private InformationUpdater Updater;
 
         public BatteryInfoForm()
         {
             InitializeComponent();
             PCBattery = Battery.GetInstance();
-            PCScreen = ScreenSwitcher.GetInstance();
+            PCScreen = Screen.GetInstance();
             Updater = new InformationUpdater(this);
-            turnOffTimeComboBox.SelectedIndex = 0;
         }
 
         /// <summary>
@@ -45,13 +44,16 @@ namespace BatteryInfo
 
         private void turnOffTimeComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-            PCScreen.Time = int.Parse(turnOffTimeComboBox.Text);
+            if (PCBattery.ConnectionType == PowerLineStatus.Offline)
+            {
+                PCScreen.SetSwitchingTime(int.Parse(turnOffTimeComboBox.Text));
+            }
         }
 
         private void BatteryInfoForm_FormClosed(object sender, FormClosedEventArgs e)
         {
             Updater.IsInterrupted = true;
-            PCScreen.IsInterrupted = true;
+            PCScreen.SetSwitchingTime(PCScreen.InitialTime);
         }
     }
 }
