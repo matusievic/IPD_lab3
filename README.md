@@ -12,4 +12,4 @@ This program uses WMI to get information about Battery and shows it.
 
 - [BatteryInfo/InformationUpdater.cs](BatteryInfo/InformationUpdater.cs) - This class represents a thread that updates displayed information
 
-- [BatteryInfo/ScreenSwitcher.cs](BatteryInfo/ScreenSwitcher.cs) - The class responds for screen turning off
+- [BatteryInfo/Screen.cs](BatteryInfo/Screen.cs) - The class responds for screen turning off
